@@ -31,7 +31,7 @@ io.on('connection', (socket) => {//conectamos nuestros servidores, (socket)<--in
             body: message,
             from: socket.id
         })
-    })
+    })//mmsalkmlm
 })
 
 app.use(express.static(join(__dirname, '../cliente/build')))
