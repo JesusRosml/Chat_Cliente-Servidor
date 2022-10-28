@@ -4,11 +4,15 @@ import morgan from "morgan";
 import {Server as SocketServer } from 'socket.io';//importaciones de servidores 
 import http from 'http'
 import cors from 'cors'
+import {dirname, join} from 'path'
+import { fileURLToPath } from 'url'
 
 import {PORT} from './confi_puertos.js'//De esta manera importamos el archivo en donde configuramos los puertos 
 
 //lineas de codigo para que el server funcione 
 const app = express();//Aplicacion de express
+const __dirname = dirname(fileURLToPath(import.meta.url));
+console.log(__dirname);
 const server = http.createServer(app)//Esto luego lo convierte a un servidor http
 const io = new SocketServer(server, {
     cors: {
@@ -29,6 +33,8 @@ io.on('connection', (socket) => {//conectamos nuestros servidores, (socket)<--in
         })
     })
 })
+
+app.use(express.static(join(__dirname, '../cliente/build')))
 
 server.listen(PORT);//Utiliza nuestro puerto importado
 console.log("Server started on port ", PORT);//concatena con el puerto que importamos

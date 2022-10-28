@@ -38,21 +38,26 @@ function App() {
 
    //De esta menera tenemos la forma de capturar el mensaje 
   return (                                  
-    <div className="App">
-      
-      <form onSubmit={handleSubmit}>
+    <div className="h-screen bg-zinc-600 text-white flex items-center justify-center">
+  
+      <form onSubmit={handleSubmit} className="bg-zinc-800 p-10">
+        <h1 className="text-2x1 font-bold my-5">Chat C-S ITESCO</h1>
         <input type="text" onChange={e => setMessage(e.target.value)} 
-          value={message} /> 
-        <button>Enviar</button>
+          value={message} 
+          className="border-2 border-zinc-500 p-2 text-black w-full"
+          /> 
+
+        <ul className="h-80 overflow-y-auto">
+        {messages.map((message, index) => (//por cada mensaje crea un div 
+          <li key={index} className={`my-2 p-2 table text-sm rounded-md ${
+            message.from === "Me" ? "bg-sky-700 ml-auto": "bg-black"}`}>
+            <p>
+              {message.from}: {message.body}
+            </p>
+          </li>
+        ))}
+        </ul>
       </form>
-
-      {messages.map((message, index) => (//por cada mensaje crea un div 
-        <div key={index}>
-          <p>{message.from}: {message.body}</p>
-        </div>
-
-      ))}
-
 
     </div>
   );

@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "node Servidor_Web/index.js",
-    "dev": "nodemon Servidor_Web/index.js"
+    "dev": "nodemon Servidor_Web/index.js",
+    "build": "npm run --prefix cliente build"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
-    "socket.io": "^4.5.3"
+    "socket.io": "^4.5.3",
+    "socket.io-client": "^4.5.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
