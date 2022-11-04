@@ -24,14 +24,14 @@ function App() {
 
   }
 
-  useEffect(() => {//permite ejecutar codigo cuando carga la aplicacion 
-    const receiveMessage = message => {
+  useEffect(() => {//permite ejecutar codigo cuando carga la aplicacion y escucha el evento mandado por el servidor, recibe una funcion como parametro
+    const receiveMessage = message => {//funcion que recibe el mensaje 
       setMessages([message, ...messages])
     };
-    socket.on("message", receiveMessage);
+    socket.on("message", receiveMessage);//Escuha el evento message
 
     return () => {
-      socket.off("message", receiveMessage);
+      socket.off("message", receiveMessage);//desuscribe cuando volvemos a crear el componente 
     };
   }, [messages])
 

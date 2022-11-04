@@ -1,9 +1,9 @@
 //Importamos los modulos para crear mi servidor
-import express from "express";//De esta manera importamos modulos
-import morgan from "morgan";
-import {Server as SocketServer } from 'socket.io';//importaciones de servidores 
+import express from "express";//Modulos
+import morgan from "morgan";//Modulo
+import {Server as SocketServer } from 'socket.io';//Importamos servers de Sockets
 import http from 'http'
-import cors from 'cors'
+import cors from 'cors'//Modulo
 import {dirname, join} from 'path'
 import { fileURLToPath } from 'url'
 
