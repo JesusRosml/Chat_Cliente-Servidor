@@ -16,7 +16,7 @@ console.log(__dirname);
 const server = http.createServer(app)//Esto luego lo convierte a un servidor http
 const io = new SocketServer(server, {
     cors: {
-        origin: 'http://localhost:3000',//conectamos nuestro frontend con el backend
+        origin: 'https://chatcliente-servidor-production.up.railway.app/',//conectamos nuestro frontend con el backend
     }
 })//Finalmente este servidor se lo pasamos como parametro  al servidor de web socket
 
