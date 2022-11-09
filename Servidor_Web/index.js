@@ -6,7 +6,7 @@ import http from 'http'
 import cors from 'cors'//Modulo
 import {dirname, join} from 'path'
 import { fileURLToPath } from 'url'
-
+//yereanaesunaputa
 import {PORT} from './confi_puertos.js'//De esta manera importamos el archivo en donde configuramos los puertos 
 
 //lineas de codigo para que el server funcione 
